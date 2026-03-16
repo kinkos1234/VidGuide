@@ -2,14 +2,14 @@
 
 ## 이미지 생성 — 3x3 그리드 & 4단 스택
 
-<div class="compare-grid">
-  <div class="compare-col">
-    <div class="compare-label good">3x3 그리드 (16:9)</div>
+<div class="two-col">
+  <div class="col">
+    <div class="col-label">3x3 그리드 — 16:9</div>
     <p>9패널, 다양한 앵글/사이즈 커버리지</p>
     <p>적합: 액션/대화 씬, 7샷 이상</p>
   </div>
-  <div class="compare-col">
-    <div class="compare-label good">4단 스택 (9:16)</div>
+  <div class="col">
+    <div class="col-label">4단 스택 — 9:16</div>
     <p>4패널, 높은 디테일</p>
     <p>적합: 감정 변화 중심, 4~6샷</p>
   </div>
@@ -104,12 +104,12 @@
 
 ### 핵심 공식
 
-<div class="formula-box">
-  <span class="accent">[인물 움직임]</span> + <span class="accent">[카메라 움직임]</span><br>
-  <span class="dim">이것이 전부다. 배경/조명/색감/의상 묘사는 넣지 않는다.</span>
+<div class="callout-box">
+  <div class="callout-main">
+    <span class="callout-highlight">[인물 움직임]</span> + <span class="callout-highlight">[카메라 움직임]</span>
+  </div>
+  <div class="callout-sub">이것이 전부다. 배경/조명/색감/의상 묘사는 넣지 않는다.<br>시작 프레임이 이미 90%의 시각 정보를 담고 있다.</div>
 </div>
-
-> **시작 프레임이 이미 90%의 시각 정보를 담고 있다.**
 
 ### 좋은 프롬프트 예시
 
@@ -125,16 +125,16 @@
 
 ### 나쁜 프롬프트 예시
 
-<div class="compare-grid">
-  <div class="compare-col">
-    <div class="compare-label bad">BAD</div>
+<div class="two-col">
+  <div class="col">
+    <div class="col-label">BAD</div>
     <p>어두운 연구소 안에서, 흰색 가운을 입은 30대 여성 연구원이 형광등 아래에서 공포에 질린 표정으로 뒤를 돌아보며, 차가운 블루 톤의 조명이 그녀의 얼굴 한쪽을 비추고...</p>
-    <p>→ 시작 프레임 정보를 반복 → AI 충돌</p>
+    <p>시작 프레임 정보를 반복 → AI 충돌</p>
   </div>
-  <div class="compare-col">
-    <div class="compare-label good">GOOD</div>
+  <div class="col">
+    <div class="col-label">GOOD</div>
     <p>여자가 천천히 뒤를 돌아본다. 카메라가 느리게 줌인한다.</p>
-    <p>→ 동작 + 카메라만. 나머지는 이미지가 담당.</p>
+    <p>동작 + 카메라만. 나머지는 이미지가 담당.</p>
   </div>
 </div>
 
@@ -237,8 +237,10 @@
 
 ### 대사 프롬프트 구조
 
-<div class="formula-box">
-  <span class="dim">[환경음 1줄]</span> + <span class="accent">[인물 움직임]</span> + <span class="accent">[카메라 움직임]</span> + <span class="accent">[캐릭터(톤): "대사"]</span>
+<div class="callout-box">
+  <div class="callout-main">
+    <span class="callout-highlight">[환경음]</span> + <span class="callout-highlight">[인물 움직임]</span> + <span class="callout-highlight">[카메라]</span> + <span class="callout-highlight">[캐릭터(톤): "대사"]</span>
+  </div>
 </div>
 
 ### 실제 예시

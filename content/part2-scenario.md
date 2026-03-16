@@ -2,38 +2,72 @@
 
 ## 시나리오의 6단계 서사 구조
 
-```mermaid
-flowchart LR
-    A["도입<br>Setup"] --> B["사건 촉발<br>Inciting Incident"]
-    B --> C["점진적 갈등<br>Rising Action"]
-    C --> D["위기<br>Crisis"]
-    D --> E["절정<br>Climax"]
-    E --> F["결말<br>Resolution"]
-
-    style A fill:#1a1926,stroke:#5c5c66,color:#ededef
-    style B fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style C fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style D fill:#1a1926,stroke:#a78bfa,color:#ededef
-    style E fill:#1a1926,stroke:#e879f9,color:#ededef
-    style F fill:#1a1926,stroke:#5c5c66,color:#ededef
-```
+<div class="flow-row">
+  <span class="flow-item">도입 Setup</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">사건 촉발</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">점진적 갈등</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">위기</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">절정</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">결말</span>
+</div>
 
 ## 7단계 워크플로우: 시놉시스에서 시나리오까지
 
-<div class="step-flow">
-  <div class="step-item"><span class="step-num">1</span><span class="step-text">시놉시스 분석</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">2</span><span class="step-text">세계관·톤</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">3</span><span class="step-text">캐릭터 설계</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">4</span><span class="step-text">비트시트</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">5</span><span class="step-text">시퀀스 확장</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">6</span><span class="step-text">시나리오 초고</span></div>
-  <span class="step-arrow">→</span>
-  <div class="step-item"><span class="step-num">7</span><span class="step-text">리라이팅</span></div>
+<div class="step-list">
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div>
+      <div class="step-text">시놉시스 분석</div>
+      <div class="step-desc">핵심 요소 추출 — 갈등, 주제, 장르, 감정 곡선</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div>
+      <div class="step-text">세계관과 톤 설정</div>
+      <div class="step-desc">시공간 배경, 레퍼런스, 시각·청각 키워드</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div>
+      <div class="step-text">캐릭터 설계</div>
+      <div class="step-desc">Want / Need / Lie / Wound → 변화 호</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div>
+      <div class="step-text">비트시트 (3막 구조)</div>
+      <div class="step-desc">Save the Cat 기반 구조화</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">5</span>
+    <div>
+      <div class="step-text">시퀀스 아웃라인</div>
+      <div class="step-desc">비트 → 씬 단위 확장, 2~3개씩 끊어서</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">6</span>
+    <div>
+      <div class="step-text">시나리오 초고</div>
+      <div class="step-desc">카메라가 보는 것 + 마이크가 듣는 것만 작성</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">7</span>
+    <div>
+      <div class="step-text">리라이팅</div>
+      <div class="step-desc">구조 · 대사 · 연출을 별도 패스로 점검</div>
+    </div>
+  </div>
 </div>
 
 ---
@@ -95,22 +129,28 @@ flowchart LR
 
 > 주요 인물들의 내면 구조를 설계. 이후 행동과 대사가 캐릭터 본질에서 자연스럽게 흘러나오도록.
 
-```mermaid
-flowchart TD
-    W["상처 Wound<br><span style='font-size:12px'>과거의 경험</span>"] --> L["거짓 믿음 Lie<br><span style='font-size:12px'>잘못된 신념</span>"]
-    L --> WA["표면적 욕망 Want<br><span style='font-size:12px'>의식적 추구</span>"]
-    L --> N["내면적 필요 Need<br><span style='font-size:12px'>자각하지 못하는 것</span>"]
-    WA --> ARC["변화 호 Arc"]
-    N --> ARC
-    ARC --> CH["Want vs Need<br><span style='font-size:12px'>클라이맥스에서 충돌</span>"]
-
-    style W fill:#1a1926,stroke:#f87171,color:#ededef
-    style L fill:#1a1926,stroke:#f87171,color:#ededef
-    style WA fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style N fill:#1a1926,stroke:#34d399,color:#ededef
-    style ARC fill:#1a1926,stroke:#a78bfa,color:#ededef
-    style CH fill:#1a1926,stroke:#e879f9,color:#ededef
-```
+<div class="info-grid">
+  <div class="info-card">
+    <div class="info-label">Wound</div>
+    <div class="info-title">상처</div>
+    <div class="info-desc">거짓 믿음을 형성하게 만든 과거의 경험</div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">Lie</div>
+    <div class="info-title">거짓 믿음</div>
+    <div class="info-desc">이야기 시작 시점에 믿고 있는 잘못된 신념</div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">Want</div>
+    <div class="info-title">표면적 욕망</div>
+    <div class="info-desc">캐릭터가 의식적으로 추구하는 것</div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">Need</div>
+    <div class="info-title">내면적 필요</div>
+    <div class="info-desc">진짜로 필요하지만 자각하지 못하는 것</div>
+  </div>
+</div>
 
 **프롬프트 예시:**
 
@@ -250,21 +290,17 @@ Save the Cat 비트시트 구조를 기본으로 하되, 아래 사항을 반영
 
 > 구조, 대사, 연출을 분리해서 각각 별도 패스로 점검.
 
-```mermaid
-flowchart LR
-    A["초고"] --> B["구조 점검"]
-    A --> C["대사 리라이팅"]
-    A --> D["시각/청각 연출 강화"]
-    B --> E["최종 시나리오"]
-    C --> E
-    D --> E
-
-    style A fill:#1a1926,stroke:#5c5c66,color:#ededef
-    style B fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style C fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style D fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style E fill:#1a1926,stroke:#a78bfa,color:#ededef
-```
+<div class="flow-row">
+  <span class="flow-item">초고</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">구조 점검</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">대사 리라이팅</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">연출 강화</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-item">최종 시나리오</span>
+</div>
 
 **프롬프트 예시 — 구조적 점검:**
 
@@ -320,19 +356,43 @@ flowchart LR
 
 ## 캐릭터 레퍼런스 생성 (5단계)
 
-```mermaid
-flowchart LR
-    A["1. 설정→시각 변환"] --> B["2. 클로즈업 탐색"]
-    B --> C["3. 풀샷 확장"]
-    C --> D["4. 캐릭터 시트<br>A/B/C"]
-    D --> E["5. 배경 시트"]
-
-    style A fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style B fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style C fill:#1a1926,stroke:#8b5cf6,color:#ededef
-    style D fill:#1a1926,stroke:#a78bfa,color:#ededef
-    style E fill:#1a1926,stroke:#8b5cf6,color:#ededef
-```
+<div class="step-list">
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div>
+      <div class="step-text">캐릭터 설정 → 시각적 속성 변환</div>
+      <div class="step-desc">얼굴, 체형, 의상, 시각적 차별점을 구체적 묘사로</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div>
+      <div class="step-text">초기 얼굴 탐색 (클로즈업)</div>
+      <div class="step-desc">오프화이트 배경 + 디퓨즈드 라이트로 얼굴 디테일 집중</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div>
+      <div class="step-text">풀샷 확장</div>
+      <div class="step-desc">클로즈업 레퍼런스 기반으로 전신 생성</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div>
+      <div class="step-text">캐릭터 시트 (A/B/C)</div>
+      <div class="step-desc">앵글 변화 · 표정 변화 · 풀샷 — 개별 고해상도 이미지로</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">5</span>
+    <div>
+      <div class="step-text">배경 시트 제작</div>
+      <div class="step-desc">공간 구조, 오브제, 컬러 팔레트, 조명 환경</div>
+    </div>
+  </div>
+</div>
 
 ### 1. 캐릭터 설정 → 시각적 속성 변환
 
@@ -643,7 +703,7 @@ Nano Banana Pro / Nano Banana 2를 위한 클로즈업 프롬프트를 작성해
 - 숏 사이즈의 변화에 리듬감이 있을 것 (WS → CU → MS 같은 시각적 리듬)
 - 180도 규칙을 준수할 것 (의도적 위반은 Purpose에 이유를 명시)
 - 하나의 숏이 하나의 목적에만 복무하지 않도록 설계할 것
-- 커버리지 숏(안전용 마스터 숷)과 편집 포인트를 고려할 것
+- 커버리지 숏(안전용 마스터 숏)과 편집 포인트를 고려할 것
 
 이 씬의 핵심 순간은 [특정 대사 또는 액션]이야. 이 순간에 가장 임팩트 있는 숏을 배치해줘.
 ```

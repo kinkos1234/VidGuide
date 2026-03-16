@@ -923,44 +923,36 @@ img {
   }
 }
 
-/* --- Mermaid Diagrams --- */
-.article-content .mermaid {
+/* --- Visual: Callout Box --- */
+.article-content .callout-box {
   margin: var(--space-xl) 0;
-  padding: var(--space-lg);
-  background: var(--bg-surface);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 12px;
   text-align: center;
-  overflow-x: auto;
 }
 
-/* --- Visual Formula Box --- */
-.article-content .formula-box {
-  margin: var(--space-xl) 0;
-  padding: var(--space-lg) var(--space-xl);
-  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-card) 100%);
-  border: 1px solid var(--border-accent);
-  border-radius: 12px;
-  text-align: center;
-  font-size: 20px;
+.article-content .callout-box .callout-main {
+  font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.6;
-  box-shadow: 0 0 24px rgba(139, 92, 246, 0.08);
+  margin-bottom: 4px;
 }
 
-.article-content .formula-box .accent {
+.article-content .callout-box .callout-sub {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.article-content .callout-box .callout-highlight {
   color: var(--accent-light);
 }
 
-.article-content .formula-box .dim {
-  color: var(--text-tertiary);
-  font-weight: 400;
-  font-size: 16px;
-}
-
-/* --- Info Card Grid --- */
+/* --- Visual: Info Grid --- */
 .article-content .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -977,17 +969,12 @@ img {
   padding: var(--space-lg);
 }
 
-.article-content .info-card .info-icon {
-  font-size: 24px;
-  margin-bottom: var(--space-sm);
-}
-
 .article-content .info-card .info-label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text-quaternary);
   margin-bottom: 6px;
 }
 
@@ -1004,58 +991,83 @@ img {
   line-height: 1.5;
 }
 
-/* --- Step Indicator --- */
-.article-content .step-flow {
-  display: flex;
-  align-items: center;
-  gap: 0;
+/* --- Visual: Step List (vertical) --- */
+.article-content .step-list {
   margin: var(--space-xl) 0;
-  padding: var(--space-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow-x: auto;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.article-content .step-flow .step-item {
   display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  white-space: nowrap;
+  flex-direction: column;
+  gap: 0;
 }
 
-.article-content .step-flow .step-num {
+.article-content .step-list .step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  position: relative;
+}
+
+.article-content .step-list .step-item + .step-item {
+  border-top: 1px solid var(--border);
+}
+
+.article-content .step-list .step-num {
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--accent-dim);
-  border: 1px solid var(--border-accent);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   font-weight: 600;
-  color: var(--accent-light);
-  flex-shrink: 0;
+  color: var(--text-tertiary);
+  margin-top: 1px;
 }
 
-.article-content .step-flow .step-text {
+.article-content .step-list .step-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.article-content .step-list .step-desc {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+/* --- Visual: Flow (horizontal) --- */
+.article-content .flow-row {
+  margin: var(--space-xl) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.article-content .flow-row .flow-item {
+  padding: 6px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
-.article-content .step-flow .step-arrow {
+.article-content .flow-row .flow-arrow {
   color: var(--text-quaternary);
-  font-size: 14px;
-  padding: 0 4px;
+  font-size: 13px;
+  flex-shrink: 0;
 }
 
-/* --- Comparison (Good vs Bad) --- */
-.article-content .compare-grid {
+/* --- Visual: Two-Column --- */
+.article-content .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
@@ -1066,36 +1078,29 @@ img {
   margin: var(--space-xl) 0;
 }
 
-.article-content .compare-col {
+.article-content .two-col .col {
   background: var(--bg-elevated);
   padding: var(--space-lg);
 }
 
-.article-content .compare-col .compare-label {
+.article-content .two-col .col-label {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--text-quaternary);
   margin-bottom: var(--space-sm);
 }
 
-.article-content .compare-col .compare-label.good {
-  color: #34d399;
-}
-
-.article-content .compare-col .compare-label.bad {
-  color: #f87171;
-}
-
-.article-content .compare-col p {
+.article-content .two-col .col p {
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 @media (max-width: 768px) {
-  .article-content .compare-grid {
+  .article-content .two-col {
     grid-template-columns: 1fr;
   }
   .article-content .info-grid {
