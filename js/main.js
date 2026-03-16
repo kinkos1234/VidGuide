@@ -9,86 +9,32 @@ const PAGES = [
   { id: 'part5', file: 'content/part5-release.md', label: 'PART 5', title: '개봉', desc: 'FilmFreeway 출품 전략' },
 ];
 
-/* ---- Markdown → HTML (lightweight) ---- */
+/* ---- Markdown → HTML (using marked.js) ---- */
 function md(src) {
-  let html = src;
+  if (typeof marked === 'undefined') return src;
 
-  // Code blocks (``` ... ```)
-  html = html.replace(/```([^\n]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    const escaped = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    return `<div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code class="language-${lang}">${escaped}</code></pre></div>`;
+  // Configure marked
+  marked.setOptions({
+    breaks: false,
+    gfm: true,
   });
 
-  // Tables
-  html = html.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm, (_, header, sep, body) => {
-    const ths = header.split('|').filter(c=>c.trim()).map(c=>`<th>${c.trim()}</th>`).join('');
-    const rows = body.trim().split('\n').map(row => {
-      const tds = row.split('|').filter(c=>c.trim()).map(c=>`<td>${inlineMd(c.trim())}</td>`).join('');
-      return `<tr>${tds}</tr>`;
-    }).join('');
-    return `<table><thead><tr>${ths}</tr></thead><tbody>${rows}</tbody></table>`;
-  });
+  // Custom renderer for code blocks (add copy button)
+  const renderer = new marked.Renderer();
+  renderer.code = function({ text, lang }) {
+    const escaped = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code class="language-${lang || ''}">${escaped}</code></pre></div>`;
+  };
 
-  // Headings
-  html = html.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
-  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  // Open external links in new tab
+  renderer.link = function({ href, title, text }) {
+    const isExternal = href && (href.startsWith('http') || href.startsWith('//'));
+    const attrs = isExternal ? ' target="_blank" rel="noopener"' : '';
+    const titleAttr = title ? ` title="${title}"` : '';
+    return `<a href="${href}"${titleAttr}${attrs}>${text}</a>`;
+  };
 
-  // Blockquotes (handle multi-line)
-  html = html.replace(/^(?:>\s?(.+)\n?)+/gm, (match) => {
-    const lines = match.split('\n').map(l => l.replace(/^>\s?/, '')).join(' ');
-    return `<blockquote><p>${inlineMd(lines)}</p></blockquote>`;
-  });
-
-  // Admonitions (MkDocs-style !!! )
-  html = html.replace(/^!!!\s+(\w+)\s+"([^"]+)"\n((?:\s{4}.+\n?)*)/gm, (_, type, title, body) => {
-    return `<div class="callout"><strong>${title}</strong><p>${inlineMd(body.replace(/^\s{4}/gm,'').trim())}</p></div>`;
-  });
-  html = html.replace(/^!!!\s+(\w+)\s+"([^"]+)"$/gm, (_, type, title) => {
-    return `<div class="callout"><strong>${title}</strong></div>`;
-  });
-
-  // Horizontal rules
-  html = html.replace(/^---$/gm, '<hr>');
-
-  // Unordered lists
-  html = html.replace(/^((?:\s*[-*]\s.+\n?)+)/gm, (match) => {
-    const items = match.trim().split('\n').map(line => {
-      const indent = line.match(/^(\s*)/)[1].length;
-      const text = line.replace(/^\s*[-*]\s+/, '');
-      return `<li>${inlineMd(text)}</li>`;
-    }).join('');
-    return `<ul>${items}</ul>`;
-  });
-
-  // Ordered lists
-  html = html.replace(/^((?:\s*\d+\.\s.+\n?)+)/gm, (match) => {
-    const items = match.trim().split('\n').map(line => {
-      const text = line.replace(/^\s*\d+\.\s+/, '');
-      return `<li>${inlineMd(text)}</li>`;
-    }).join('');
-    return `<ol>${items}</ol>`;
-  });
-
-  // Paragraphs (remaining text blocks)
-  html = html.replace(/^(?!<[a-z/])((?:.+\n?)+)/gm, (match) => {
-    const trimmed = match.trim();
-    if (!trimmed || trimmed.startsWith('<')) return match;
-    return `<p>${inlineMd(trimmed)}</p>\n`;
-  });
-
-  return html;
-}
-
-function inlineMd(text) {
-  if (!text) return '';
-  return text
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-    .replace(/→/g, '→');
+  return marked.parse(src, { renderer });
 }
 
 /* ---- Copy code ---- */
