@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="base-url" content="">
+  <title>VidGuide — AI 영화 제작 완전 가이드</title>
+  <meta name="description" content="율파파(darkcommis)의 AI 영화제 수상 워크플로우 정리. 아이디어부터 영화제 출품까지.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="dot"></span>
+      VidGuide
+    </a>
+    <ul class="nav-links">
+      <li><a href="page.html?p=part0">준비</a></li>
+      <li><a href="page.html?p=part1">시작</a></li>
+      <li><a href="page.html?p=part2">시나리오</a></li>
+      <li><a href="page.html?p=part3">시각화</a></li>
+      <li><a href="page.html?p=part4">편집</a></li>
+      <li><a href="page.html?p=part5">개봉</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="메뉴">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu">
+    <a href="page.html?p=part0">Part 0. 준비</a>
+    <a href="page.html?p=part1">Part 1. 시작</a>
+    <a href="page.html?p=part2">Part 2. 시나리오</a>
+    <a href="page.html?p=part3">Part 3. 시각화</a>
+    <a href="page.html?p=part4">Part 4. 편집</a>
+    <a href="page.html?p=part5">Part 5. 개봉</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-badge">AI Film Production</span>
+    <h1 class="hero-title">AI <span class="gradient">영화 제작</span><br>완전 가이드</h1>
+    <p class="hero-subtitle">
+      국제 AI 영화제 수상자 율파파(darkcommis)의 워크플로우.<br>
+      아이디어에서 영화제 출품까지, 모든 단계를 담았습니다.
+    </p>
+    <a href="page.html?p=part0" class="hero-cta">
+      가이드 시작하기
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards-section">
+    <div class="cards-section-header fade-in">
+      <div class="cards-section-label">Curriculum</div>
+      <h2 class="cards-section-title">6단계 프로덕션 파이프라인</h2>
+    </div>
+    <div class="cards-grid fade-in">
+      <a class="card" href="page.html?p=part0">
+        <span class="card-part">Part 0</span>
+        <h3 class="card-title">시작하기 전에</h3>
+        <p class="card-desc">Image-to-Video 원칙, AI 도구 준비, API 서비스 활용법</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a class="card" href="page.html?p=part1">
+        <span class="card-part">Part 1</span>
+        <h3 class="card-title">시작</h3>
+        <p class="card-desc">이야기의 출발점 찾기, 검증된 이야기 차용, LLM 활용</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a class="card" href="page.html?p=part2">
+        <span class="card-part">Part 2</span>
+        <h3 class="card-title">시나리오 작성</h3>
+        <p class="card-desc">7단계 워크플로우, 캐릭터 레퍼런스 5단계, 프로덕션 문서</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a class="card" href="page.html?p=part3">
+        <span class="card-part">Part 3</span>
+        <h3 class="card-title">시각화</h3>
+        <p class="card-desc">3x3 그리드 생성, 비디오 프롬프트 공식, 대사와 립싱크</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a class="card" href="page.html?p=part4">
+        <span class="card-part">Part 4</span>
+        <h3 class="card-title">편집과 완성</h3>
+        <p class="card-desc">편집 13가지 원리, 사운드 디자인, BGM, 자막 처리</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a class="card" href="page.html?p=part5">
+        <span class="card-part">Part 5</span>
+        <h3 class="card-title">개봉</h3>
+        <p class="card-desc">FilmFreeway 출품, 영화제 선택 전략, 도전의 이유</p>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section class="workflow-section fade-in">
+    <div class="cards-section-header">
+      <div class="cards-section-label">Workflow</div>
+      <h2 class="cards-section-title">전체 제작 흐름</h2>
+    </div>
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <div class="workflow-step-num">1</div>
+        <div class="workflow-step-content">
+          <h4>아이디어 → 시나리오</h4>
+          <p>LLM과 함께 7단계로 시놉시스에서 시나리오까지</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">2</div>
+        <div class="workflow-step-content">
+          <h4>캐릭터 & 배경 레퍼런스</h4>
+          <p>5단계 캐릭터 시트, A/B/C 카테고리, 배경 시트</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">3</div>
+        <div class="workflow-step-content">
+          <h4>프로덕션 문서</h4>
+          <p>디렉터 노트, 샷 리스트, Figma 스토리보드</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">4</div>
+        <div class="workflow-step-content">
+          <h4>이미지 → 비디오 생성</h4>
+          <p>3x3 그리드, 비디오 프롬프트 공식, Kling 3.0 립싱크</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">5</div>
+        <div class="workflow-step-content">
+          <h4>편집 & 사운드</h4>
+          <p>13가지 편집 원리, SFX/BGM, 자막, 업스케일링</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">6</div>
+        <div class="workflow-step-content">
+          <h4>영화제 출품</h4>
+          <p>FilmFreeway 전략, 20~30곳 집중 출품</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      원본 출처: <a href="https://oasis-dentist-28a.notion.site/31f7425e612280ef8a88e5af317588ac" target="_blank" rel="noopener">율파파(darkcommis) Notion 가이드</a>
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

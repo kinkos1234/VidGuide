@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,12 @@ on:
       - main
 
 permissions:
-  contents: write
+  pages: write
+  id-token: write
+
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
 
 jobs:
   deploy:
@@ -14,10 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          python-version: '3.x'
+          path: .
 
-      - run: pip install mkdocs-material
-
-      - run: mkdocs gh-deploy --force
+      - id: deployment
+        uses: actions/deploy-pages@v4
