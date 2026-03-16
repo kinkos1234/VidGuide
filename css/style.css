@@ -955,13 +955,21 @@ img {
 /* --- Visual: Info Grid --- */
 .article-content .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   margin: var(--space-xl) 0;
+}
+
+.article-content .info-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.article-content .info-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .article-content .info-card {
@@ -1103,7 +1111,9 @@ img {
   .article-content .two-col {
     grid-template-columns: 1fr;
   }
-  .article-content .info-grid {
+  .article-content .info-grid,
+  .article-content .info-grid.cols-2,
+  .article-content .info-grid.cols-4 {
     grid-template-columns: 1fr;
   }
 }

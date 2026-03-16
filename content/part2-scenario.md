@@ -129,7 +129,7 @@
 
 > 주요 인물들의 내면 구조를 설계. 이후 행동과 대사가 캐릭터 본질에서 자연스럽게 흘러나오도록.
 
-<div class="info-grid">
+<div class="info-grid cols-2">
   <div class="info-card">
     <div class="info-label">Wound</div>
     <div class="info-title">상처</div>
