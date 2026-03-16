@@ -3,15 +3,41 @@
 ## 편집의 기본 원리
 
 ### 영화의 계층구조
-```
-에피소드(시퀀스) > 씬 > 컷(샷)
-— 각 계층이 독립적으로 기승전결을 갖춤
+
+```mermaid
+flowchart TD
+    A["🎬 에피소드 / 시퀀스"] --> B["🎞️ 씬"]
+    B --> C["✂️ 컷 / 샷"]
+    A -.- D["각 계층이 독립적으로<br>기승전결을 갖춤"]
+
+    style A fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style B fill:#1a1926,stroke:#a78bfa,color:#ededef
+    style C fill:#1a1926,stroke:#e879f9,color:#ededef
+    style D fill:#1a1926,stroke:#5c5c66,color:#8a8a95
 ```
 
 ### 컷의 3가지 동기
-1. **정보의 동기** — 관객에게 새로운 정보 제공
-2. **감정의 동기** — 감정 강도 변화 (WS→CU = 밀도↑, CU→WS = 공허함)
-3. **리듬의 동기** — 시간 흐름의 속도감 부여
+
+<div class="info-grid">
+  <div class="info-card">
+    <div class="info-icon">💡</div>
+    <div class="info-label">정보의 동기</div>
+    <div class="info-title">새로운 정보 제공</div>
+    <div class="info-desc">관객에게 필요한 정보를 전달하기 위한 컷</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">❤️</div>
+    <div class="info-label">감정의 동기</div>
+    <div class="info-title">감정 강도 변화</div>
+    <div class="info-desc">WS→CU = 밀도↑<br>CU→WS = 공허함</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">🎵</div>
+    <div class="info-label">리듬의 동기</div>
+    <div class="info-title">속도감 부여</div>
+    <div class="info-desc">시간 흐름의 완급 조절</div>
+  </div>
+</div>
 
 > **동기 없는 컷은 존재 이유가 없다.**
 
@@ -24,6 +50,45 @@
 ---
 
 ## 편집의 13가지 원리
+
+```mermaid
+flowchart LR
+    subgraph 기초["기초 원리"]
+        A["1. 이야기=변화"]
+        B["2. 애태우기"]
+        C["3. 소재 조합"]
+    end
+    subgraph 심리["심리 효과"]
+        D["4. 쿨레쇼프"]
+        E["5. 감정이입"]
+        F["6. 계층별 애태우기"]
+    end
+    subgraph 기술["기술 원리"]
+        G["7. 템포와 간격"]
+        H["8. 정렬·생략"]
+        I["9. 화면 크기"]
+    end
+    subgraph 연결["연결 기법"]
+        J["10. 움직임 연결"]
+        K["11. 프레임 In/Out"]
+        L["12. 연결법 변경"]
+        M["13. 리액션"]
+    end
+
+    style A fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style B fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style C fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style D fill:#1a1926,stroke:#a78bfa,color:#ededef
+    style E fill:#1a1926,stroke:#a78bfa,color:#ededef
+    style F fill:#1a1926,stroke:#a78bfa,color:#ededef
+    style G fill:#1a1926,stroke:#e879f9,color:#ededef
+    style H fill:#1a1926,stroke:#e879f9,color:#ededef
+    style I fill:#1a1926,stroke:#e879f9,color:#ededef
+    style J fill:#1a1926,stroke:#c084fc,color:#ededef
+    style K fill:#1a1926,stroke:#c084fc,color:#ededef
+    style L fill:#1a1926,stroke:#c084fc,color:#ededef
+    style M fill:#1a1926,stroke:#c084fc,color:#ededef
+```
 
 1. **이야기 = 변화** → 시간을 압축/확장/재배열하여 변화 설계
 2. **애태우기** → 변화를 지연시킬수록 드러나는 순간의 임팩트 극대화
@@ -61,6 +126,22 @@
 ---
 
 ## 사운드와 배경음악
+
+```mermaid
+flowchart TD
+    A["🎬 영상 편집 완료"] --> B["💥 효과음 SFX 배치<br>(먼저)"]
+    B --> C["🎙️ 대사 레벨 조정"]
+    C --> D["🎵 배경음악 BGM<br>(나중에)"]
+    D --> E["🔇 침묵 연출 배치"]
+    E --> F["🎧 최종 믹싱"]
+
+    style A fill:#1a1926,stroke:#5c5c66,color:#ededef
+    style B fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style C fill:#1a1926,stroke:#8b5cf6,color:#ededef
+    style D fill:#1a1926,stroke:#a78bfa,color:#ededef
+    style E fill:#1a1926,stroke:#e879f9,color:#ededef
+    style F fill:#1a1926,stroke:#8b5cf6,color:#ededef
+```
 
 ### 효과음 (SFX)
 
@@ -113,8 +194,19 @@ Suno의 Custom 모드에 넣을 수 있도록, 스타일 태그와 설명을 분
 
 ## 자막
 
-- **해외 영화제**: 한글 + 영어 이중자막 필수
-- **국내/SNS**: 한글만 또는 자막 없음 가능
+<div class="info-grid">
+  <div class="info-card">
+    <div class="info-label">해외 영화제</div>
+    <div class="info-title">한글 + 영어 이중자막 필수</div>
+    <div class="info-desc">영어 아래 + 한글 위</div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">국내/SNS</div>
+    <div class="info-title">한글만 또는 자막 없음</div>
+    <div class="info-desc">타겟에 맞게 선택</div>
+  </div>
+</div>
+
 - 위치: 하단 중앙, 이중자막 시 영어 아래 + 한글 위
 - 폰트: 산세리프 (본고딕, 프리텐다드 / Arial, Roboto)
 - 가독성: 흰색 텍스트 + 검은색 외곽선 1~2px

@@ -2,10 +2,18 @@
 
 ## 이미지 생성 — 3x3 그리드 & 4단 스택
 
-| 방식 | 종횡비 | 특성 | 적합한 상황 |
-|------|--------|------|------------|
-| 3x3 그리드 | 16:9 | 9패널, 다양한 앵글/사이즈 커버리지 | 액션/대화 씬, 7샷 이상 |
-| 4단 스택 | 9:16 | 4패널, 높은 디테일 | 감정 변화 중심, 4~6샷 |
+<div class="compare-grid">
+  <div class="compare-col">
+    <div class="compare-label good">3x3 그리드 (16:9)</div>
+    <p>9패널, 다양한 앵글/사이즈 커버리지</p>
+    <p>적합: 액션/대화 씬, 7샷 이상</p>
+  </div>
+  <div class="compare-col">
+    <div class="compare-label good">4단 스택 (9:16)</div>
+    <p>4패널, 높은 디테일</p>
+    <p>적합: 감정 변화 중심, 4~6샷</p>
+  </div>
+</div>
 
 **레퍼런스 업로드 (필수):**
 
@@ -96,11 +104,12 @@
 
 ### 핵심 공식
 
-```
-[인물 움직임] + [카메라 움직임]
-```
+<div class="formula-box">
+  <span class="accent">[인물 움직임]</span> + <span class="accent">[카메라 움직임]</span><br>
+  <span class="dim">이것이 전부다. 배경/조명/색감/의상 묘사는 넣지 않는다.</span>
+</div>
 
-> **이것이 전부다.** 배경/조명/색감/의상 묘사는 넣지 않는다. 시작 프레임이 이미 90%의 시각 정보를 담고 있다.
+> **시작 프레임이 이미 90%의 시각 정보를 담고 있다.**
 
 ### 좋은 프롬프트 예시
 
@@ -116,14 +125,18 @@
 
 ### 나쁜 프롬프트 예시
 
-```
-❌ 어두운 연구소 안에서, 흰색 가운을 입은 30대 여성 연구원이 형광등 아래에서
-공포에 질린 표정으로 뒤를 돌아보며, 차가운 블루 톤의 조명이 그녀의 얼굴 한쪽을
-비추고, 배경에는 깨진 유리 시험관이 바닥에 흩어져 있으며, 카메라가 천천히 줌인한다.
-```
-
-→ 시작 프레임이 이미 보여주는 정보를 반복 → AI 충돌 → 불안정한 결과
-→ 수정: `여자가 천천히 뒤를 돌아본다. 카메라가 느리게 줌인한다.`
+<div class="compare-grid">
+  <div class="compare-col">
+    <div class="compare-label bad">BAD</div>
+    <p>어두운 연구소 안에서, 흰색 가운을 입은 30대 여성 연구원이 형광등 아래에서 공포에 질린 표정으로 뒤를 돌아보며, 차가운 블루 톤의 조명이 그녀의 얼굴 한쪽을 비추고...</p>
+    <p>→ 시작 프레임 정보를 반복 → AI 충돌</p>
+  </div>
+  <div class="compare-col">
+    <div class="compare-label good">GOOD</div>
+    <p>여자가 천천히 뒤를 돌아본다. 카메라가 느리게 줌인한다.</p>
+    <p>→ 동작 + 카메라만. 나머지는 이미지가 담당.</p>
+  </div>
+</div>
 
 ### 샷리스트 → 비디오 프롬프트 일괄 변환
 
@@ -165,26 +178,35 @@
 
 ### 자주 쓰는 인물 움직임 표현
 
-**정적:**
-
-- 인물 정지, 미세한 호흡만 (The person remains still, breathing subtly)
-- 눈만 천천히 움직인다 (Eyes slowly shift to the left)
-- 미세하게 고개를 기울인다 (Slight head tilt)
-- 입술이 미세하게 떨린다 (Lips tremble slightly)
-
-**중간:**
-
-- 천천히 고개를 돌린다 (Slowly turns head to the right)
-- 한 발 앞으로 걸어 나온다 (Takes one step forward)
-- 손을 천천히 들어올린다 (Slowly raises hand)
-- 몸을 돌려 뒤를 본다 (Turns around to look behind)
-
-**강한:**
-
-- 갑자기 뒤를 돌아본다 (Suddenly turns to look behind)
-- 빠르게 일어선다 (Quickly stands up)
-- 뛰어간다 (Runs forward)
-- 뒤로 물러난다 (Steps back abruptly)
+<div class="info-grid">
+  <div class="info-card">
+    <div class="info-label">정적</div>
+    <div class="info-desc">
+      인물 정지, 미세한 호흡만<br>
+      눈만 천천히 움직인다<br>
+      미세하게 고개를 기울인다<br>
+      입술이 미세하게 떨린다
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">중간</div>
+    <div class="info-desc">
+      천천히 고개를 돌린다<br>
+      한 발 앞으로 걸어 나온다<br>
+      손을 천천히 들어올린다<br>
+      몸을 돌려 뒤를 본다
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="info-label">강한</div>
+    <div class="info-desc">
+      갑자기 뒤를 돌아본다<br>
+      빠르게 일어선다<br>
+      뛰어간다<br>
+      뒤로 물러난다
+    </div>
+  </div>
+</div>
 
 ### 자주 쓰는 카메라 움직임 표현
 
@@ -215,9 +237,9 @@
 
 ### 대사 프롬프트 구조
 
-```
-[환경음 1줄] + [인물 움직임] + [카메라 움직임] + [캐릭터(톤): "대사"]
-```
+<div class="formula-box">
+  <span class="dim">[환경음 1줄]</span> + <span class="accent">[인물 움직임]</span> + <span class="accent">[카메라 움직임]</span> + <span class="accent">[캐릭터(톤): "대사"]</span>
+</div>
 
 ### 실제 예시
 

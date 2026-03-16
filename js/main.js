@@ -19,9 +19,13 @@ function md(src) {
     gfm: true,
   });
 
-  // Custom renderer for code blocks (add copy button)
+  // Custom renderer for code blocks (add copy button + mermaid support)
   const renderer = new marked.Renderer();
   renderer.code = function({ text, lang }) {
+    // Mermaid diagrams
+    if (lang === 'mermaid') {
+      return `<div class="mermaid">${text}</div>`;
+    }
     const escaped = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     return `<div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code class="language-${lang || ''}">${escaped}</code></pre></div>`;
   };
@@ -73,6 +77,11 @@ async function loadPage(pageId) {
   // Render content
   const contentEl = document.getElementById('article-body');
   if (contentEl) contentEl.innerHTML = html;
+
+  // Render Mermaid diagrams
+  if (typeof mermaid !== 'undefined') {
+    mermaid.run({ nodes: contentEl.querySelectorAll('.mermaid') });
+  }
 
   // Build TOC
   buildTOC();
