@@ -1,0 +1,69 @@
+site_name: AI 영화 제작 가이드 | VidGuide
+site_url: https://kinkos1234.github.io/VidGuide/
+site_description: 율파파(darkcommis)의 AI 영화제 수상 워크플로우 정리
+site_author: Comad.J
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+  font:
+    text: Noto Sans KR
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+  icon:
+    logo: material/movie-open
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Part 0. 준비: part0-preparation.md
+  - Part 1. 시작: part1-start.md
+  - Part 2. 시나리오: part2-scenario.md
+  - Part 3. 시각화: part3-visualization.md
+  - Part 4. 편집: part4-editing.md
+  - Part 5. 개봉: part5-release.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: ko
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kinkos1234
